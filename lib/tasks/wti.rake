@@ -2,7 +2,7 @@
 require_relative '../wti_tasks/commands'
 
 namespace :wti do
-  projects = WTI.find_projects
+  projects = WtiTasks::Commands.find_projects
 
   namespace :pull do
     desc "Pull wti translations for all projects (.wti*)"
@@ -11,7 +11,7 @@ namespace :wti do
     projects.each do |project, file|
       desc "Pull wti translations for #{project} project (#{file})"
       task project do
-        puts WTI.pull(file)
+        puts WtiTasks::Commands.pull(file)
       end
     end
   end
@@ -23,7 +23,7 @@ namespace :wti do
     projects.each do |project, file|
       desc "Push wti translations for #{project} project (#{file})"
       task project do
-        puts WTI.push(file)
+        puts WtiTasks::Commands.push(file)
       end
     end
   end
