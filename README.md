@@ -2,7 +2,7 @@
 
 ## Provides Rake tasks for managing projects on WebTranslateIt.
 
-Each project on WebTranslateIt has it's corresponding wti configuration file.
+Each project on [WebTranslateIt](http://webtranslateit.com) has it's corresponding wti configuration file.
 The default is `.wti`. Name subsequent files `.wti-[project name]`, and this gem will
 be able to pick them up.
 
