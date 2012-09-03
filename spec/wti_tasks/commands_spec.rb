@@ -1,16 +1,16 @@
-require_relative '../lib/wti_tasks'
+require_relative '../../lib/wti_tasks/commands'
 
-describe WtiTasks do
-  let!(:wti) { WtiTasks.new }
+describe WtiTasks::Commands do
+  let!(:wti) { WtiTasks::Commands.new }
   let(:filename) { "filename" }
 
   shared_examples_for "delegated class method" do
     let(:args) { [] }
 
-    it "delegates to an instance of WtiTasks" do
-      WtiTasks.should_receive(:new).any_number_of_times.and_return(wti)
+    it "delegates to an instance of WtiTasks::Commands" do
+      WtiTasks::Commands.should_receive(:new).any_number_of_times.and_return(wti)
       wti.should_receive(method).with(*args)
-      WtiTasks.send(method, *args)
+      WtiTasks::Commands.send(method, *args)
     end
   end
 
